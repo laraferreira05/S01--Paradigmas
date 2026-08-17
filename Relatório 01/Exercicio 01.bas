@@ -10,7 +10,7 @@ Input ml
 
 conta = peso * 35
 
-If ml >= conta Them
+If ml >= conta Then
 Print "Meta atingida"
 
 Else
