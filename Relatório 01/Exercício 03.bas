@@ -8,8 +8,8 @@ Input tempo
 min = tempo * 60
 seg = tempo * 3600
 
-Print "Horas:"; tempo
-Print "Minutos:"; min
-Print "Segundos:"; seg
+Print "Valor original em horas:"; tempo
+Print "Valor equivalente em minutos:"; min
+Print "Valor equivalente em segundos:"; seg
 
 Sleep
