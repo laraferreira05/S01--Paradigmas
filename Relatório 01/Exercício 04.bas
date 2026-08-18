@@ -8,7 +8,7 @@ Input tempo
 
 pace = tempo\dist
 
-Print "O valor do seu pace foi de:";  pace 
+Print "O valor do seu pace foi de:";  pace ; "Km/min"
 
 Sleep
 
