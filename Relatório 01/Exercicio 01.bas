@@ -5,7 +5,7 @@ Dim conta As double
 Print "Insira seu peso" 
 Input peso
 
-Print "Insira a quantidade de agua inserida"
+Print "Insira a quantidade de agua ingerida"
 Input ml
 
 conta = peso * 35
