@@ -20,5 +20,4 @@ for i = 1, #numeros do
     end
 end
 
-print("Saida esperada:")
 print("O numero " .. X .. " aparece " .. cont .. " vez(es) na tabela")
