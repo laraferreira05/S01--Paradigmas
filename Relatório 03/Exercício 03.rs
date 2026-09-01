@@ -1,42 +1,36 @@
 use std::io::{self, Write};
 
-fn acertou_o_alvo(palpite: i32, numero_secreto: i32) -> bool {
-    if (palpite - numero_secreto).abs() <= 5 {
-        return true;
-    }
+fn imprimir_terminados_em(digito: i32,limite_inferior: i32, limite_superior: i32) {
 
-    return false;
+    for numero in limite_inferior..=limite_superior {
+        if numero % 10 == digito {
+            println!("{}", numero);
+        }
+    }
 }
 
 fn main() {
-    let numero_secreto: i32 = 20;
 
-    loop {
-        print!("Digite seu palpite: ");
-        io::stdout()
-            .flush()
-            .expect("Falha ao descarregar a tela");
+    print!("Digite o digito final desejado (0 a 9): ");
+    io::stdout().flush().unwrap();
+    let mut ent1 = String::new();
+    io::stdin().read_line(&mut ent1).unwrap();
+    let numero: i32 = ent1.trim().parse().unwrap_or(0);
 
-        let mut entrada = String::new();
+    print!("Digite o limite inferior: ");
+    io::stdout().flush().unwrap();
+    let mut ent2 = String::new();
+    io::stdin().read_line(&mut ent2).unwrap();
+    let inferior: i32 = ent2.trim().parse().unwrap_or(0);
 
-        io::stdin()
-            .read_line(&mut entrada)
-            .expect("Falha ao ler a entrada");
+    print!("Digite o limite superior: ");
+    io::stdout().flush().unwrap();
+    let mut ent3 = String::new();
+    io::stdin().read_line(&mut ent3).unwrap();
+    let superior: i32 = ent3.trim().parse().unwrap_or(0);
 
-        let palpite: i32 = entrada
-            .trim()
-            .parse()
-            .expect("Digite um numero valido");
 
-        if acertou_o_alvo(palpite, numero_secreto) {
-            let distancia = (palpite - numero_secreto).abs();
-            println!(
-                "Voce acertou! Ficou a apenas {} unidades do numero secreto!",
-                distancia
-            );
-            break;
-        } else {
-            println!("Você passou longe! Tente novamente.");
-        }
-    }
+    println!("---Numeros no intervalo terminados em {} --- ",numero);
+    imprimir_terminados_em(numero, inferior, superior);
+ 
 }
