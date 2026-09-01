@@ -30,12 +30,10 @@ fn main() {
 
         if acertou_o_alvo(palpite, numero_secreto) {
             let distancia = (palpite - numero_secreto).abs();
-
             println!(
                 "Voce acertou! Ficou a apenas {} unidades do numero secreto!",
                 distancia
             );
-
             break;
         } else {
             println!("Você passou longe! Tente novamente.");
